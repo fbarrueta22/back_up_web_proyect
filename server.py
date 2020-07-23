@@ -331,13 +331,13 @@ def create_review2(game_id):
         write_on = datetime.now(),
         valoration = c['valoration'],
         user_id = user.id,
-        game_id = id
+        game_id = game_id
     )
     db_session.add(review)
     db_session.commit()
     db_session.close()
-    return render_template('/html/resenasPage.html')
-
+    return Response(json.dumps({'msg':'Review created'}), status=201)
+    
 @app.route('/reviews/<id>', methods = ['GET'])
 def get_review(id):
     db_session = db.getSession(engine)
@@ -378,9 +378,20 @@ def delete_review():
 @app.route('/get_reviews/<game_id>', methods = ['GET'])
 def get_reviews2(game_id):
     db_session = db.getSession(engine)
-    reviews = db_session.query(entities.Review).filter(entities.Review.game_id == game_id)
-    all_reviews = reviews[:]
-    return Response(json.dumps(all_reviews, cls=connector.AlchemyEncoder), mimetype='application/json')
+    _reviews = db_session.query(entities.Review).filter(entities.Review.game_id == game_id)
+    reviews = _reviews[:]
+    data = []
+    for review in reviews:
+        d = {'id': review.id,
+             'content': review.content,
+             'write_on': str(review.write_on),
+             'valoration': review.valoration,
+             'user_id': str(review.user_id),
+             'user': review.user.username,
+             'game_id': str(review.game_id),
+             'game': review.game.title}
+        data.append(d)
+    return Response(json.dumps(data), status=200, mimetype='application/json')
 
 
 if __name__ == '__main__':
