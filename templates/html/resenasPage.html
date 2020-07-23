@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Reseñas</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/static/css/success.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="/static/js/libs/jquery-3.3.1.min.js" ></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="/static/js/resenasPage.js" charset="utf-8"></script>
+
+</head>
+
+<body background="../static/images/fondoweb.jpg" onload="get_all_games()">
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">GAME++</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li><button onclick="goToHome()" id="btnGoToHome" type="button" class="btn btn-lg">Home</button></li>
+        <li><button onclick="goToJuegosPage()" id="btnGoToJuegos" type="button" class="btn btn-lg">Juegos</button></li>
+        <li class="active"><button id="btnGoToResenas" type="button" class="btn btn-warning btn-lg">Reseñas</button></li>
+        <li><button onclick="goToContactoPage()" id="btnGoToContacto" type="button" class="btn btn-lg">Contáctenos</button></li>
+        <label id="lblTitle" name="lblTitle" style="font-size:20px; color: white; font-family: monospace; padding-top: 8px; padding-left: 50px;">BIENVENIDO</label>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><button style="display: none;" onclick="logout()" id="btnLogout" type="button" class="btn btn-info btn-lg"><span class="glyphicon glyphicon-log-out"></span> Logout</button></li>
+        <li><button onclick="goToSignUpPage()" id="btnSignUp" type="button" class="btn btn-info btn-lg"><span class="glyphicon glyphicon-user"></span> Sign Up</button></li>
+        <li><button onclick="goToLoginPage()" id="btnLogin" type="button" class="btn btn-info btn-lg"><span class="glyphicon glyphicon-log-in"></span> Login</button></li>
+        <li><button onclick="goToCart()" id="btnCart" type="button" class="btn btn-info btn-lg"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</button></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<table>
+  <tr>
+    <td style="vertical-align: top;width: 350px;color:white;">
+
+        </div>
+
+        <div class="" id="games">
+        </div>
+    </td>
+
+    <td>
+      <div class="comments-container">
+        <h1>Reviews</h1>
+    
+        <ul id="comments-list" class="comments-list">
+          <li>
+            <div class="comment-main-level">
+
+              <div class="" id="reviews"></div>
+
+              
+              <div class="" id="send"> </div>
+            </div>
+      </div>
+    </td>
+  </tr>
+</table>
+
+
+</body>
+</html>

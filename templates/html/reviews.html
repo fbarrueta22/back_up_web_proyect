@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <title>The Games</title>
+    <script src="/static/js/libs/jquery-3.3.1.min.js" ></script>
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/success.css">
+    <script src="/static/js/libs/bootstrap.min.js" ></script>
+    <script src="/static/js/review_games.js" charset="utf-8"></script>
+</head>
+<body onload=get_all_games()>
+  <table>
+    <tr>
+      <td style="vertical-align: top;width: 350px">
+          <span>Games</span>
+          <div class="">
+            <input type="text" id="key_word" onkeyup="search_games"/>
+
+          </div>
+
+          <div class="" id="games">
+          </div>
+      </td>
+
+      <td>
+        <div class="comments-container">
+          <h1>Reviews</h1>
+      
+          <ul id="comments-list" class="comments-list">
+            <li>
+              <div class="comment-main-level">
+
+                <div class="" id="reviews"></div>
+
+                
+                <div class="" id="send"> </div>
+              </div>
+        </div>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
